@@ -1,8 +1,10 @@
 package com.cg.hcs.services;
-import java.util.Iterator;
+
 import java.util.List;
 
 import com.cg.hcs.bean.*;
+
+
 public class ServiceImplementation implements ServiceInterface {
 	public void addCenter(String centerName,List<Test>testArray,List<DiagnosticCenter>centerArray) {
 		DiagnosticCenter d= new DiagnosticCenter(centerName,testArray);
@@ -33,7 +35,22 @@ public class ServiceImplementation implements ServiceInterface {
 			}
 		}
 	}
-	
+	public void Register(List<User> customer, String password)
+	{
+	for(int i=0;i<customer.size();i++) {
+		User usr=customer.get(i);
+	     if (usr.getUserPassword().equals(password)) 
+	        {
+	            System.out.println("Welcome!!!");
+	        }
+	     else
+	     {
+	    	 System.out.println("your account doesn't exists please register first");
+	     }
+	    }
+	    
+	    
+	}
 	public boolean approveAppointment() {
 		return true;
 	}
